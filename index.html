@@ -6,9 +6,16 @@
       <base target="_top">
    </head>
    <body>
-      <iframe
+      <iframe id="app-frame"
          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
          src="https://script.google.com/macros/s/AKfycbz_uIfwhwqGFJL9of6GGAWEgt326i_r-xAD8BCE4kJRQkyO3OtRTKNEV7A9wNTnojp5Hw/exec">
       </iframe>
+
+      <script>
+         // ดึง ?uid=... จากลิงก์ Github มาต่อท้ายลิงก์ Google Script อัตโนมัติ
+         if (window.location.search) {
+             document.getElementById('app-frame').src += window.location.search;
+         }
+      </script>
    </body>
 </html>
